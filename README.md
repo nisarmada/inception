@@ -55,3 +55,18 @@ WP_USER_EMAIL=user_email
 - Acquiring information about all the new subjects in the project.
 
 All code was written and tested by me. 
+
+
+## Docker Choices
+
+**VMs vs Docker**
+Virtual Machines run complete operating systems, which means they are slow and heavy, especially compared to Docker. Docker containers share the host OS kernel, which in turn makes them faster.
+
+**Docker Network vs Host** 
+Docker bridge network creates an isolated network where containers communicate by name. Host network would expose everything directly to the host machine (faster but less secure).
+
+**Volumes vs Bind Mounts**
+Docker volumes are managed by Docker. Bind mounts link to specific host paths. This project uses volumes configured to bind to '~/data/', combining both Docker management with accessible host storage.
+
+**Secres vs Environment Variables**
+Docker secrets are encrypted and require Swarm mode (production). Environment variables in '.env' are plain text but simpler for development. This project uses '.env' that is of course, never commited to git. This is achieved by adding '.env' to our '.gitignore'.
