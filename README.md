@@ -37,9 +37,9 @@ WP_USER_EMAIL=user_email
 
 ## Commands
 
-- 'make' - build and start containers
-- 'make down' - stop containers
-- 'make fclean' - remove everything including data
+- `make` - build and start containers
+- `make down` - stop containers
+- `make fclean` - remove everything including data
 
 ## Resources
 
@@ -66,7 +66,7 @@ Virtual Machines run complete operating systems, which means they are slow and h
 Docker bridge network creates an isolated network where containers communicate by name. Host network would expose everything directly to the host machine (faster but less secure).
 
 **Volumes vs Bind Mounts**
-Docker volumes are managed by Docker. Bind mounts link to specific host paths. This project uses volumes configured to bind to '~/data/', combining both Docker management with accessible host storage.
+Docker volumes are managed by Docker. Bind mounts link to specific host paths. This project uses volumes configured to bind to `~/data/`, combining both Docker management with accessible host storage.
 
 **Secres vs Environment Variables**
-Docker secrets are encrypted and require Swarm mode (production). Environment variables in '.env' are plain text but simpler for development. This project uses '.env' that is of course, never commited to git. This is achieved by adding '.env' to our '.gitignore'.
+Docker secrets are encrypted and require Swarm mode (production). Environment variables in `.env` are plain text but simpler for development. This project uses `.env` that is of course, never commited to git. This is achieved by adding `.env` to our `.gitignore`.
