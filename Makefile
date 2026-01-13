@@ -1,15 +1,15 @@
 all:
 	@mkdir -p $(HOME)/data/mariadb
 	@mkdir -p $(HOME)/data/wordpress
-	@docker-compose -f ./src/docker-compose.yml up --build
+	@docker-compose -f ./docker-compose.yml up --build
 
 down:
-	@docker-compose -f ./src/docker-compose.yml down
+	@docker-compose -f ./docker-compose.yml down
 
 re: down all
 
 clean:
-	@docker-compose -f ./src/docker-compose.yml down -v
+	@docker-compose -f ./docker-compose.yml down -v
 
 fclean: clean
 	@rm -rf $(HOME)/data/mariadb
